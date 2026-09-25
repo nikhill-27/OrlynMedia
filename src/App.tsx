@@ -3,12 +3,7 @@ import { ReadingProgressBar } from './components/ReadingProgressBar';
 import { ParticleBackground } from './components/ParticleBackground';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { TrustedStrip } from './components/TrustedStrip';
-import { BoldCapabilitiesSection } from './components/BoldCapabilitiesSection';
-import { BoldWorkSection } from './components/BoldWorkSection';
-import { BoldSprintSection } from './components/BoldSprintSection';
-import { BoldReputationSection } from './components/BoldReputationSection';
-import { BoldCTASection } from './components/BoldCTASection';
+import { MainSections } from './components/MainSections';
 import { Footer } from './components/Footer';
 import { ProjectInquiryModal } from './components/ProjectInquiryModal';
 import { VideoModal } from './components/VideoModal';
@@ -92,30 +87,11 @@ export default function App() {
           onOpenChat={() => setGeminiChatOpen(true)}
         />
 
-        {/* 3. Streamlined Trusted Leader Strip */}
-        <TrustedStrip />
-
-        {/* 4. Bold Capabilities: Web Designing + Cinema Video + Tactile DaVinci ACES Demo */}
-        <BoldCapabilitiesSection
-          onOpenInquiry={(topic) => handleOpenInquiry(topic)}
+        {/* 3-8. Main Sections combined */}
+        <MainSections
+          onOpenInquiry={handleOpenInquiry}
           onPlayReel={handlePlayReel}
-        />
-
-        {/* 5. Bold Editorial Selected Work Showcase */}
-        <BoldWorkSection
           onOpenVideoModal={handleOpenVideoModal}
-          onOpenInquiry={(projectName) => handleOpenInquiry(projectName)}
-        />
-
-        {/* 6. Bold 14-Day Sprint Velocity */}
-        <BoldSprintSection />
-
-        {/* 7. Bold Proven Outcomes & Attributable Social Proof */}
-        <BoldReputationSection />
-
-        {/* 8. Bold Direct Commission Intake CTA */}
-        <BoldCTASection
-          onOpenInquiry={(data) => handleOpenInquiry(data)}
           onOpenChat={() => setGeminiChatOpen(true)}
         />
       </main>
